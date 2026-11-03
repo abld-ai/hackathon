@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>해커톤 · 오후 4:20 마감</title>
+<title>해커톤 · 오후 4:30 마감</title>
 <style>
   * { box-sizing: border-box; }
   html, body { margin: 0; min-height: 100%; }
@@ -56,16 +56,16 @@
 </button>
 <main>
   <h1>해커톤 제출 마감까지</h1>
-  <div class="target" id="target">11월 3일 · 오후 4:20 마감</div>
+  <div class="target" id="target">11월 3일 · 오후 4:30 마감</div>
   <div class="time" id="time" role="timer" aria-live="off">--:--:--</div>
   <div class="bar"><div class="fill" id="fill"></div></div>
   <p class="submission" id="submission" role="status">오후 3시부터 제출 가능</p>
-  <p class="schedule">제출 시간 · 오후 3:00 ~ 4:20</p>
+  <p class="schedule">제출 시간 · 오후 3:00 ~ 4:30</p>
 </main>
 <script>
   const start = Date.parse("2026-11-03T12:20:00+09:00");
   const opens = Date.parse("2026-11-03T15:00:00+09:00");
-  const target = Date.parse("2026-11-03T16:20:00+09:00");
+  const target = Date.parse("2026-11-03T16:30:00+09:00");
   const total = target - start;
   const pad = n => String(n).padStart(2, "0");
   const timeEl = document.getElementById("time");
@@ -87,7 +87,7 @@
     const s = Math.ceil(left / 1000);
     const text = pad(Math.floor(s / 3600)) + ":" + pad(Math.floor(s % 3600 / 60)) + ":" + pad(s % 60);
     timeEl.textContent = text;
-    document.title = text + " · 16:20까지";
+    document.title = text + " · 16:30까지";
     fillEl.style.width = (100 * Math.max(0, Math.min(1, 1 - left / total))).toFixed(2) + "%";
     document.body.className = s <= 300 ? "soon" : "";
     setTimeout(tick, 1000 - (Date.now() % 1000) + 5);

@@ -75,7 +75,7 @@
   function tick() {
     const now = Date.now();
     const left = target - now;
-    const status = left <= 0 ? "제출이 마감되었습니다" : now >= opens ? "지금 제출 가능합니다" : "오후 3시부터 제출 가능";
+    const status = left <= 0 ? "지금 올리면 '지연'으로 표시됩니다" : now >= opens ? "지금 제출 가능합니다" : "오후 3시부터 제출 가능";
     if (submissionEl.textContent !== status) submissionEl.textContent = status;
     if (left <= 0) {
       timeEl.textContent = "00:00:00";
